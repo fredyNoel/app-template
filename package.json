@@ -1,6 +1,6 @@
 {
-  "name": "my-app",
-  "version": "0.0.0",
+  "name": "app-template",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -44,5 +44,17 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.2"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fredyNoel/app-template.git"
+  },
+  "author": "Fredy Gildardo Garcia Mendoza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fredyNoel/app-template/issues"
+  },
+  "homepage": "https://github.com/fredyNoel/app-template#readme"
 }
