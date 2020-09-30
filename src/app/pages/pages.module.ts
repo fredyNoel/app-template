@@ -7,6 +7,7 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ColaboladoresComponent } from './colaboladores/colaboladores.component';
 import { RutasComponent } from './rutas/rutas.component';
 import { MaterialModule } from '../material/material.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { MaterialModule } from '../material/material.module';
   imports: [
     CommonModule,
     PagesRoutingModule,
-    MaterialModule
+    MaterialModule,
+    SharedModule
   ]
 })
 export class PagesModule { }

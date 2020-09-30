@@ -8,24 +8,20 @@ import { ItemMenu } from '../../../interface/main';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
-  
+
   public Menu: ItemMenu[] = [
     {
       label: 'Administrar',
-      icon: 'link',
+      icon: 'settings',
       submenu: [
-        {label: 'Usuarios', url: 'usuario', icon: 'link'},
-        {label: 'Colaboladores', url: 'colaboladores', icon: 'link'},
-        {label: 'Ruta', url: 'rutas', icon: 'link'},
+        {label: 'Usuarios', url: 'usuario', icon: 'supervisor_account'},
+        {label: 'Colaboladores', url: 'colaboladores', icon: 'people_outline'},
+        {label: 'Ruta', url: 'rutas', icon: 'alt_route'},
       ]
     },
     {
       label: 'Bitacora',
-      icon: 'link',
-      submenu: [
-        {label: 'Embarque', url: 'link1', icon: 'link'},
-        {label: 'Devolucion', url: 'link2', icon: 'link'}
-      ]
+      icon: 'assignment_turned_in'
     }
 
   ];
@@ -33,9 +29,9 @@ export class SidenavComponent implements OnInit {
   opened = true;
 
   @ViewChild('sidenav', { static: true }) sidenav: MatSidenav;
-  
+
   constructor() {}
-  
+
   ngOnInit() {
     if (window.innerWidth < 768) {
       this.sidenav.fixedTopGap = window.innerWidth > 600 ? 64 : 56;

@@ -1,4 +1,3 @@
-<!-- Toolbar -->
 <mat-toolbar color="primary">
   <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
   <div>MyApp</div>
@@ -27,7 +26,7 @@
     [fixedInViewport]="true"
     [fixedTopGap]>
     <mat-accordion displayMode="flat">
-        <mat-expansion-panel *ngFor="let menu of Menu">
+        <mat-expansion-panel *ngFor="let menu of Menu" [disabled]="!menu.submenu">
             <mat-expansion-panel-header>
               <mat-panel-title>
                 <mat-icon style="margin-right: 1rem;">{{menu.icon}}</mat-icon>

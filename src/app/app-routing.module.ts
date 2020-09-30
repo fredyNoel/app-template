@@ -1,8 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './public/home/home.component';
 
 const routes: Routes = [
-  { path: 'dashboard', loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule) }
+  {
+    path: '',
+    component: HomeComponent,
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./public/login/login.module').then(m => m.LoginModule)
+  },
+  {
+    path: 'not-found',
+    loadChildren: () => import('./public/not-found/not-found.module').then(m => m.NotFoundModule)
+  },
+  { path: '**', redirectTo: 'not-found' }
 ];
 
 @NgModule({
