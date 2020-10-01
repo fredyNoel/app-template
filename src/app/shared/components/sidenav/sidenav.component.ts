@@ -14,7 +14,7 @@ export class SidenavComponent implements OnInit {
       label: 'Administrar',
       icon: 'settings',
       submenu: [
-        {label: 'Usuarios', url: 'usuario', icon: 'supervisor_account'},
+        {label: 'Usuarios', url: 'usuarios', icon: 'supervisor_account'},
         {label: 'Colaboladores', url: 'colaboladores', icon: 'people_outline'},
         {label: 'Ruta', url: 'rutas', icon: 'alt_route'},
       ]

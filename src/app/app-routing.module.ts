@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'administrar',
-    loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
+    loadChildren: () => import('./pages/administrar/administrar.module').then(m => m.AdministrarModule)
   },
   {
     path: 'login',
