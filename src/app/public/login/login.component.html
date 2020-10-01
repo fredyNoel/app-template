@@ -1,1 +1,22 @@
-<p>login works!</p>
+  <form autocomplete="off" class="p-5 m-auto" style="max-width: 475px;">
+    <div class="text-center">
+      <button mat-fab color="warn" type="button">
+        <mat-icon>lock</mat-icon>
+      </button>
+      <h1>Iniciar sesion</h1>
+    </div>
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Usuario *</mat-label>
+      <input matInput>
+      <mat-icon matSuffix>person_outline</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Contraseña *</mat-label>
+      <input matInput>
+      <mat-icon matSuffix>lock_outline</mat-icon>
+    </mat-form-field>
+    <mat-checkbox class="d-block pb-2">Recordarme!</mat-checkbox>
+    <button mat-raised-button class="w-100" color="primary" type="button">
+      Ingresar
+    </button>
+  </form>
