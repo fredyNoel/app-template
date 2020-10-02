@@ -16,7 +16,7 @@
     </button>
   </mat-menu>
 </mat-toolbar>
-<mat-sidenav-container class="example-container">
+<mat-sidenav-container class="example-container is-dark">
   <mat-sidenav #sidenav
     [mode]="isBiggerScreen() ? 'over' : 'side'"
     [(opened)]="opened"
@@ -43,7 +43,7 @@
         </mat-expansion-panel>
     </mat-accordion>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content class="is-light">
     <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>

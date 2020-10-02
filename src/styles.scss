@@ -31,4 +31,26 @@ $myApp-theme: mat-light-theme($myApp-primary, $myApp-accent, $myApp-warn);
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-.mat-expansion-panel-body { padding: 0 !important }
+.mat-expansion-panel-body { padding: 0 !important; }
+.active { background-color: #66666666 !important; }
+
+
+/**********************************************************************************/
+// Thema personalizado
+/**********************************************************************************/
+$dark-primary: mat-palette($mat-green);
+$dark-accent: mat-palette($mat-yellow);
+$dark-warn: mat-palette($mat-red);
+$dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+$light-primary: mat-palette($mat-blue);
+$light-accent: mat-palette($mat-deep-purple);
+$light-warn: mat-palette($mat-red);
+$light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
+
+.is-dark {
+  @include angular-material-theme($dark-theme);
+}
+.is-light {
+  @include angular-material-theme($light-theme);
+}
