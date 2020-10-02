@@ -1,0 +1,55 @@
+
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Perfil</mat-card-title>
+    <mat-card-subtitle>Datos personales</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="row">
+      <div class="col-sm-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Nombre *</mat-label>
+          <input matInput>
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Apellidos</mat-label>
+          <input matInput>
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+      </div>
+    </div> 
+    <div class="row">
+      <div class="col-md-8">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Direccion</mat-label>
+          <input matInput>
+          <mat-icon matSuffix>link</mat-icon>
+        </mat-form-field>    
+      </div>
+      <div class="col-md-4">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Telefono</mat-label>
+          <input matInput>
+          <mat-icon matSuffix>phone</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Usuario *</mat-label>
+      <input matInput>
+      <mat-icon matSuffix>lock</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Antigüedad</mat-label>
+      <input matInput>
+      <mat-icon matSuffix>event_note</mat-icon>
+    </mat-form-field>
+    <div class="d-flex justify-content-end">
+      <button mat-raised-button color="primary">Actualizar datos</button>
+    </div>
+  </mat-card-content>
+</mat-card>

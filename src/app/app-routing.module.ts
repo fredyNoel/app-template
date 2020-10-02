@@ -8,8 +8,8 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'administrar',
-    loadChildren: () => import('./pages/administrar/administrar.module').then(m => m.AdministrarModule)
+    path: '',
+    loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
   },
   {
     path: 'login',
