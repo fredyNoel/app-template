@@ -9,10 +9,11 @@ import { ColaboradoresComponent } from './colaboradores/colaboradores.component'
 import { PerfilComponent } from './perfil/perfil.component';
 import { RutasComponent } from './rutas/rutas.component';
 import { MaterialModule } from '../material/material.module';
+import { DashboardComponent } from './dashboard.component';
 
 
 @NgModule({
-  declarations: [PagesComponent, UsuariosComponent, ColaboradoresComponent, PerfilComponent, RutasComponent],
+  declarations: [PagesComponent, UsuariosComponent, ColaboradoresComponent, PerfilComponent, RutasComponent, DashboardComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,

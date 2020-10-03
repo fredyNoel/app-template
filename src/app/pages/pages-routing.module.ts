@@ -6,12 +6,14 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ColaboradoresComponent } from './colaboradores/colaboradores.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { RutasComponent } from './rutas/rutas.component';
+import { DashboardComponent } from './dashboard.component';
 
 const routes: Routes = [
   {
     path: '',
     component: PagesComponent,
     children: [
+      { path: '', component: DashboardComponent },
       { path: 'usuarios', component: UsuariosComponent },
       { path: 'colaboradores', component: ColaboradoresComponent },
       { path: 'rutas', component: RutasComponent },
