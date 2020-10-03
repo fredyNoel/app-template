@@ -1,6 +1,6 @@
 import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { ItemMenu } from '../../../interface/main';
+import { ItemMenu } from '../../../interface/Interfaces';
 
 @Component({
   selector: 'app-sidenav',
