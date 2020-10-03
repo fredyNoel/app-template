@@ -1,13 +1,12 @@
-import { HttpErrorResponse, HttpEvent, HttpHandler, HttpRequest } from '@angular/common/http';
+import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
-
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class HttpErrorService {
+export class HttpErrorInterceptorService implements HttpInterceptor {
 
   constructor() { }
 
@@ -25,11 +24,9 @@ export class HttpErrorService {
           errorMsg = `Error code: ${err.status}, Message: ${err.message}`;
         }
         // Swal.fire('Atencion', err.error.errors.message, 'error');
-        console.log('Mi error personalizao');
-
         return throwError(err);
       })
     );
   }
-
+  
 }

@@ -1,8 +1,8 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { environment } from '../../../environments/environment';
 import { Usuario } from '../../interface/Interfaces';
@@ -36,8 +36,7 @@ export class UsuariosService {
         delete resp.usuario.password;
         this.crearStorage(resp.usuario, resp.token);
         return resp.usuario;
-      }),
-      catchError((err: HttpErrorResponse) => {this.logout(); return throwError(err.error.mensaje);})
+      })
     );
   }
   verificaLogin() {
@@ -60,8 +59,7 @@ export class UsuariosService {
     .pipe(
       map((resp: any) => {
         return resp;
-      }),
-      catchError((err: HttpErrorResponse) => {return throwError(err.error.mensaje)})
+      })
     );
   }
   read(): Observable<any> {

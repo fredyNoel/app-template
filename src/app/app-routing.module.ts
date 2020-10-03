@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './public/home/home.component';
+import { LoginGuard } from './services/services.index';
 
 const routes: Routes = [
   {
@@ -9,6 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
+    canActivate: [LoginGuard],
     loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
   },
   {
