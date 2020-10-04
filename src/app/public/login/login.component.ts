@@ -12,6 +12,7 @@ import { UsuariosService } from '../../services/services.index';
 })
 export class LoginComponent implements OnInit {
 
+  public hide = true;
   public isLoading: boolean;
   public forma: FormGroup;
   public recuerdame: boolean = false;
