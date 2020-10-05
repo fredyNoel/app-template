@@ -13,14 +13,14 @@
     <mat-form-field appearance="outline" class="w-100">
       <mat-label>Contraseña *</mat-label>
       <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
-      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" type="button">
+      <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
     </mat-form-field>
     <mat-checkbox formControlName="recuerdame" class="d-block pb-2">Recordarme!</mat-checkbox>
     <button mat-raised-button class="w-100" color="primary" type="submit" [disabled]="isLoading">
       <div class="d-flex justify-content-center" *ngIf="isLoading">
-        <mat-progress-spinner mode="indeterminate" diameter="36" strokeWidth="7"></mat-progress-spinner>
+        <mat-progress-spinner mode="indeterminate" diameter="36" strokeWidth="5"></mat-progress-spinner>
       </div>
       <span *ngIf="!isLoading">Ingresar</span>
     </button>

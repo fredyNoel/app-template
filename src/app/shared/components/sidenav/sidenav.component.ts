@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { UsuariosService } from '../../../services/services.index';
-import { ItemMenu, Usuario } from '../../../interface/Interfaces';
+import { ItemMenu } from '../../../interface/Interfaces';
 
 @Component({
   selector: 'app-sidenav',
@@ -10,7 +10,6 @@ import { ItemMenu, Usuario } from '../../../interface/Interfaces';
 })
 export class SidenavComponent implements OnInit {
 
-  public user: Usuario;
   public Menu: ItemMenu[] = [
     {
       label: 'Administrar',
@@ -44,7 +43,6 @@ export class SidenavComponent implements OnInit {
       this.sidenav.fixedTopGap = 64;
       this.opened = true;
     }
-    this.user = this._usuarioService.usuario;
   }
 
   @HostListener('window:resize', ['$event'])
