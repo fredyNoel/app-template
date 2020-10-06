@@ -9,7 +9,7 @@ import {
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   providers: [
     LoginGuard,

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -17,7 +18,8 @@ export class UsuariosService {
 
   constructor(
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    // private snack: MatSnackBar
   ) {
     this.cargarStorage();
   }
@@ -65,19 +67,19 @@ export class UsuariosService {
   read(): Observable<any> {
     const url = environment.api + '/usuario' + '?token=' + this.token;
     return this.http.get(url).pipe(
-      map((resp: any) => {
-        const usuario = resp.data;
-        const data = [];
-        usuario.forEach(e => {
-          data.push({
-            'id': e._id,
-            'nombre': e.nombre,
-            'username': e.usuario,
-            'role': e.role,
-            'email': e.email
-          });
-        });
-        return data;
+      map((resp: ApiData) => {
+        // const usuario = resp.data;
+        // const data = [];
+        // usuario.forEach(e => {
+        //   data.push({
+        //     'id': e._id,
+        //     'nombre': e.nombre,
+        //     'username': e.usuario,
+        //     'role': e.role,
+        //     'email': e.email
+        //   });
+        // });
+        return resp.data;
       })
     );
   }
@@ -86,8 +88,9 @@ export class UsuariosService {
     const url = environment.api + '/usuario/perfil/' + this.usuario._id +'?token=' + this.token;
     return this.http.put(url, usuario)
     .pipe(
-      map((resp: ApiData) => {
+      map((resp: any) => {
         console.log(resp);
+        this.crearStorage(resp.data, this.token);
         return resp.data;
       })
     );
