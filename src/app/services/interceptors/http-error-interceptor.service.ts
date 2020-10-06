@@ -2,6 +2,7 @@ import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,7 @@ export class HttpErrorInterceptorService implements HttpInterceptor {
           console.log('Este es un error del servidor');
           errorMsg = `Error code: ${err.status}, Message: ${err.message}`;
         }
-        // Swal.fire('Atencion', err.error.errors.message, 'error');
+        Swal.fire('Atencion', err.error.errors.message, 'error');
         return throwError(err);
       })
     );

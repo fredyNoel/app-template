@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { environment } from '../../../environments/environment';
-import { Usuario } from '../../interface/Interfaces';
+import { ApiData, Usuario } from '../../interface/Interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -82,7 +82,16 @@ export class UsuariosService {
     );
   }
 
-  update() {}
+  update(usuario: Usuario): Observable<any> {
+    const url = environment.api + '/usuario/perfil/' + this.usuario._id +'?token=' + this.token;
+    return this.http.put(url, usuario)
+    .pipe(
+      map((resp: ApiData) => {
+        console.log(resp);
+        return resp.data;
+      })
+    );
+  }
   delete() {}
 
   crearStorage(usuario: Usuario, token: string) {
