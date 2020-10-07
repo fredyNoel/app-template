@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-pages',
   template: `
     <app-sidenav>
-      <div class="container pt-3">
+      <div class="container-fluid pt-3">
         <router-outlet></router-outlet>
       </div>
     </app-sidenav>

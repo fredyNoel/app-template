@@ -25,6 +25,7 @@ export class HttpErrorInterceptorService implements HttpInterceptor {
           errorMsg = `Error code: ${err.status}, Message: ${err.message}`;
         }
         Swal.fire('Atencion', err.error.errors.message, 'error');
+        console.log(errorMsg);        
         return throwError(err);
       })
     );

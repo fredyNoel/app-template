@@ -17,9 +17,9 @@ import { HttpErrorInterceptorService } from './services/services.index';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
+    HttpClientModule,
     RouterModule,
   ],
   providers: [

@@ -1,27 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { HomeComponent } from './public/home/home.component';
 import { LoginGuard } from './services/services.index';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent,
+  }, 
+  {
+    path: '',
+    loadChildren: () => import('./public/login/login.module').then(m => m.LoginModule)
   },
   {
     path: 'dashboard',
     canActivate: [LoginGuard],
     loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
   },
-  {
-    path: 'login',
-    loadChildren: () => import('./public/login/login.module').then(m => m.LoginModule)
-  },
-  {
-    path: 'not-found',
-    loadChildren: () => import('./public/not-found/not-found.module').then(m => m.NotFoundModule)
-  },
-  { path: '**', redirectTo: 'not-found' }
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

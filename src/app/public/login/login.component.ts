@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
 import { UsuariosService } from '../../services/services.index';
 
 @Component({
@@ -20,7 +19,6 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private router: Router,
     private snack: MatSnackBar,
     private _usuarioService: UsuariosService
   ) {}
@@ -45,7 +43,7 @@ export class LoginComponent implements OnInit {
     const user = this.forma.value;
     this._usuarioService.login(user, user.recuerdame)
     .subscribe(
-      () => this.router.navigate(['/dashboard']),
+      () => this.isLoading = false,
       () => this.isLoading = false
     );
   }

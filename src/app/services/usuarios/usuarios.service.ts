@@ -37,7 +37,8 @@ export class UsuariosService {
         delete resp.usuario.role;
         delete resp.usuario.password;
         this.crearStorage(resp.usuario, resp.token);
-        return resp.usuario;
+        this.router.navigate(['/dashboard']);
+        return true;
       })
     );
   }
@@ -51,7 +52,7 @@ export class UsuariosService {
     localStorage.removeItem('usuario');
     localStorage.removeItem('token');
 
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
     return true;
   }
 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { MaterialModule } from '../material/material.module';
 import { PagesRoutingModule } from './pages-routing.module';
@@ -9,8 +10,6 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ColaboradoresComponent } from './colaboradores/colaboradores.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { RutasComponent } from './rutas/rutas.component';
-import { DashboardComponent } from './dashboard.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,8 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     UsuariosComponent,
     ColaboradoresComponent,
     PerfilComponent,
-    RutasComponent,
-    DashboardComponent
+    RutasComponent
   ],
   imports: [
     CommonModule,
