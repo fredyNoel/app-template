@@ -8,7 +8,9 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './public/home/home.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import { HttpErrorInterceptorService } from './services/services.index';
+import { MaterialModule } from './material/material.module';
+import { AuthService } from './shared/services/auth.service';
+import { ErrorInterceptorService } from './shared/interceptor/error-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,14 @@ import { HttpErrorInterceptorService } from './services/services.index';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    MaterialModule,
     RouterModule,
   ],
   providers: [
+    AuthService,
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: HttpErrorInterceptorService,
+      useClass: ErrorInterceptorService,
       multi: true
     }
   ],

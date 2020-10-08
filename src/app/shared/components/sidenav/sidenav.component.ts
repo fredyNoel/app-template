@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { UsuariosService } from '../../../services/services.index';
 import { ItemMenu } from '../../../interface/Interfaces';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -32,7 +32,7 @@ export class SidenavComponent implements OnInit {
   @ViewChild('sidenav', { static: true }) sidenav: MatSidenav;
 
   constructor(
-    private _usuarioService: UsuariosService
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
@@ -65,8 +65,8 @@ export class SidenavComponent implements OnInit {
     }
   }
 
-  salir(): void {
-    this._usuarioService.logout();
+  salir() {
+    this.authService.signOut();
   }
 
 }

@@ -22,10 +22,10 @@ import { RutasComponent } from './rutas/rutas.component';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     PagesRoutingModule,
     SharedModule,
     MaterialModule,
-    ReactiveFormsModule
   ]
 })
 export class PagesModule { }

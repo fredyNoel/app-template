@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { UsuariosService } from '../../services/services.index';
+
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private snack: MatSnackBar,
-    private _usuarioService: UsuariosService
+    private auth: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -41,7 +42,7 @@ export class LoginComponent implements OnInit {
     }
     this.isLoading = true;
     const user = this.forma.value;
-    this._usuarioService.login(user, user.recuerdame)
+    this.auth.signIn(user, user.recuerdame)
     .subscribe(
       () => this.isLoading = false,
       () => this.isLoading = false

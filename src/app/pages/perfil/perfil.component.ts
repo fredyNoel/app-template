@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UsuariosService } from '../../services/services.index';
+
 import { Usuario } from '../../interface/Interfaces';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-perfil',
@@ -16,12 +17,12 @@ export class PerfilComponent implements OnInit {
   public isLoading: boolean;
 
   constructor(
-    private _usuarioService: UsuariosService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private authService: AuthService,
   ) { }
 
   ngOnInit(): void {
-    this.user = this._usuarioService.usuario;
+    this.user = this.authService.currentUser;
     this.forma = this.fb.group({
       nombre: [this.user.nombre, Validators.required],
       apellidos: [this.user.apellidos],
@@ -36,7 +37,7 @@ export class PerfilComponent implements OnInit {
 
   actualizar() {
     this.isLoading = true;
-    this._usuarioService.update(this.forma.value)
+    this.authService.updateProfile(this.forma.value)
     .subscribe(
       () => this.isLoading = false,
       () => this.isLoading = false

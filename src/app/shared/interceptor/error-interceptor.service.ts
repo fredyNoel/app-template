@@ -7,28 +7,26 @@ import Swal from 'sweetalert2';
 @Injectable({
   providedIn: 'root'
 })
-export class HttpErrorInterceptorService implements HttpInterceptor {
+export class ErrorInterceptorService implements HttpInterceptor {
 
   constructor() { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
     return next.handle(req)
     .pipe(
       catchError((err: HttpErrorResponse) => {
-        let errorMsg = '';
+        let msg = '';
         if(err.error instanceof ErrorEvent) {
           console.log('Este es un error del cliente');
-          errorMsg = `Error: ${err.error.message}`;
+          msg = `Error: ${err.error.message}`;
         } else {
           console.log('Este es un error del servidor');
-          errorMsg = `Error code: ${err.status}, Message: ${err.message}`;
+          msg = `Error code: ${err.status}, Message: ${err.message}`;
         }
         Swal.fire('Atencion', err.error.errors.message, 'error');
-        console.log(errorMsg);        
+        console.log(msg);        
         return throwError(err);
       })
     );
   }
-  
 }
