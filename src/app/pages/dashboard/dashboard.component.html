@@ -1,27 +1,61 @@
 <div class="row">
   <div class="col-lg-3 col-md-6 pb-3">
     <mat-card>
-      Card1
+      <mat-list>
+        <mat-list-item>
+          <button mat-mini-fab type="button">
+            <mat-icon class="mat-18">persons</mat-icon>
+          </button>
+          <div mat-line>Vacation Itinerary</div>
+          <div mat-line>Feb 20, 2016</div>
+        </mat-list-item>
+      </mat-list>
+      
     </mat-card>
   </div>
   <div class="col-lg-3 col-md-6 pb-3">
     <mat-card>
-      Card2
+      <mat-list>
+        <mat-list-item>
+          <button mat-mini-fab type="button">
+            <mat-icon class="mat-18">persons</mat-icon>
+          </button>
+          <div mat-line>Vacation Itinerary</div>
+          <div mat-line>Feb 20, 2016</div>
+        </mat-list-item>
+      </mat-list>
     </mat-card>
   </div>
   <div class="col-lg-3 col-md-6 pb-3">
     <mat-card>
-      Card3
+      <mat-list>
+        <mat-list-item>
+          <button mat-mini-fab type="button">
+            <mat-icon class="mat-18">persons</mat-icon>
+          </button>
+          <div mat-line>Vacation Itinerary</div>
+          <div mat-line>Feb 20, 2016</div>
+        </mat-list-item>
+      </mat-list>
     </mat-card>
   </div>
   <div class="col-lg-3 col-md-6 pb-3">
     <mat-card>
-      Card4
+      <mat-list>
+        <mat-list-item>
+          <button mat-mini-fab type="button">
+            <mat-icon class="mat-18">persons</mat-icon>
+          </button>
+          <div mat-line>Vacation Itinerary</div>
+          <div mat-line>Feb 20, 2016</div>
+        </mat-list-item>
+      </mat-list>
     </mat-card>
   </div>
 </div>
 <div class="pb-3">
   <mat-card>
+    <h2 class="text-center">Reparto: {{hoy|date}}</h2>
     <table class="table w-100 border">
       <thead>
         <tr>
@@ -62,11 +96,9 @@
         [datasets]="barChartData"
         [labels]="barChartLabels"
         [options]="barChartOptions"
-
         [legend]="barChartLegend"
         [chartType]="barChartType">
       </canvas>
     </div>
-    <button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button>
   </mat-card>
 </div>
