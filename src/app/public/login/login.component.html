@@ -5,12 +5,12 @@
       </button>
       <h1>Iniciar sesion</h1>
     </div>
-    <mat-form-field appearance="outline" class="w-100">
+    <mat-form-field class="w-100">
       <mat-label>Usuario *</mat-label>
       <input matInput formControlName="usuario" >
       <mat-icon matSuffix>person_outline</mat-icon>
     </mat-form-field>
-    <mat-form-field appearance="outline" class="w-100">
+    <mat-form-field class="w-100">
       <mat-label>Contraseña *</mat-label>
       <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
       <button mat-icon-button matSuffix (click)="hide = !hide" type="button">

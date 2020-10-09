@@ -7,14 +7,14 @@
     <form [formGroup]="forma" (ngSubmit)="actualizar()">
       <div class="row">
         <div class="col-sm-6">
-          <mat-form-field appearance="outline" class="w-100">
+          <mat-form-field class="w-100">
             <mat-label>Nombre *</mat-label>
             <input matInput formControlName="nombre">
             <mat-icon matSuffix>person</mat-icon>
           </mat-form-field>
         </div>
         <div class="col-sm-6">
-          <mat-form-field appearance="outline" class="w-100">
+          <mat-form-field class="w-100">
             <mat-label>Apellidos</mat-label>
             <input matInput formControlName="apellidos">
             <mat-icon matSuffix>person</mat-icon>
@@ -23,14 +23,14 @@
       </div> 
       <div class="row">
         <div class="col-md-8">
-          <mat-form-field appearance="outline" class="w-100">
+          <mat-form-field class="w-100">
             <mat-label>Direccion</mat-label>
             <input matInput formControlName="direccion">
             <mat-icon matSuffix>place</mat-icon>
           </mat-form-field>    
         </div>
         <div class="col-md-4">
-          <mat-form-field appearance="outline" class="w-100">
+          <mat-form-field class="w-100">
             <mat-label>Telefono</mat-label>
             <input matInput formControlName="telefono">
             <mat-icon matSuffix>phone</mat-icon>
@@ -39,26 +39,26 @@
       </div>
       <div class="row">
         <div class="col-md-5">
-          <mat-form-field appearance="outline" class="w-100">
+          <mat-form-field class="w-100">
             <mat-label>Usuario *</mat-label>
             <input matInput formControlName="usuario">
             <mat-icon matSuffix>lock</mat-icon>
           </mat-form-field>
         </div>
         <div class="col-md-7">
-          <mat-form-field appearance="outline" class="w-100">
+          <mat-form-field class="w-100">
             <mat-label>Correo *</mat-label>
             <input matInput formControlName="email">
             <mat-icon matSuffix>mail</mat-icon>
           </mat-form-field>
         </div>
       </div>
-      <mat-form-field appearance="outline" class="w-100">
+      <mat-form-field class="w-100">
         <mat-label>Ingrese una nueva contraseña</mat-label>
         <input matInput formControlName="password" type="password">
         <mat-icon matSuffix>lock</mat-icon>
       </mat-form-field>
-      <mat-form-field appearance="outline" class="w-100">
+      <mat-form-field class="w-100">
         <mat-label>Antigüedad</mat-label>
         <input matInput formControlName="create_at">
         <mat-icon matSuffix>event_note</mat-icon>
