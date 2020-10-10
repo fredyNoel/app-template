@@ -44,7 +44,7 @@ export class MatTableResponsiveDirective implements OnInit, AfterViewInit, OnDes
       .pipe(
         mapTo([this.thead.rows.item(0), this.tbody.rows]),
         map(
-          ([headRow, bodyRows]: [HTMLTableRowElement, HTMLCollectionOf<HTMLTableRowElement>]) => [
+          ([headRow, bodyRows]: any) => [
             [...headRow.children].map(headerCell => headerCell.textContent),
             [...bodyRows].map(row => [...row.children])
           ]

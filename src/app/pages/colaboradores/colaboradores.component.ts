@@ -12,7 +12,7 @@ import { ColaboradorModalComponent } from '../../shared/components/modals/colabo
 })
 export class ColaboradoresComponent implements OnInit {
 
-  public displayColumns: string[] = ['nombre', 'telefono', 'isActive', 'role', '_id'];
+  public displayColumns: string[] = ['nombre', 'telefono', 'isActive', 'role', 'actions'];
   public data: any;
   
   constructor(

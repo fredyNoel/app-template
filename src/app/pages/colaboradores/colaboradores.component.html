@@ -37,8 +37,8 @@
         <td mat-cell *matCellDef="let element"> {{element.role}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="_id">
-        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element">
           <button mat-icon-button color="accent" (click)="openDialog(element)">
               <mat-icon>edit</mat-icon>
