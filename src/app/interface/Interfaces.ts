@@ -6,30 +6,30 @@ export interface ApiData {
 }
 
 export interface Usuario {
-  nombre: string,
-  apellidos: string,
-  direccion: string,
-  telefono: string,
-  usuario: string,
-  email: string,
-  password: string,
-  img: string,
-  role: string,
-  isActive: boolean,
-  isDelete: boolean,
-  createAt: Date,
-  _id: string
+  nombre?: string,
+  apellidos?: string,
+  direccion?: string,
+  telefono?: string,
+  usuario?: string,
+  email?: string,
+  password?: string,
+  img?: string,
+  role?: string,
+  isActive?: boolean,
+  isDelete?: boolean,
+  createAt?: Date,
+  _id?: string
 }
 
 export interface Colaborador {
-  nombre: string,
-  apellidos: string,
-  direccion: string,
-  telefono: string,
-  role: string,
-  isActive: boolean,
-  _id: string,
-  usuario: Usuario
+  nombre?: string,
+  apellidos?: string,
+  direccion?: string,
+  telefono?: string,
+  role?: string,
+  isActive?: boolean,
+  _id?: string,
+  usuario?: Usuario
 }
 
 export interface ItemMenu {
