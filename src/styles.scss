@@ -5,6 +5,7 @@
 // Plus imports for other components in your app.
 $zindex-sticky: 999;
 @import './assets/plugins/bootstrap-4.5.2/scss/bootstrap.scss';
+@import './app/material/mat-table-responsive/mat-table-responsive.directive.scss';
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!

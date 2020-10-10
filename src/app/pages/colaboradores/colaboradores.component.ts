@@ -12,8 +12,8 @@ import { ColaboradorModalComponent } from '../../shared/components/modals/colabo
 })
 export class ColaboradoresComponent implements OnInit {
 
-  public displayColumns: string[] = ['nombre', 'telefono', 'isActive', 'role', 'actions'];
-  public data: any;
+  public displayColumns: string[] = ['nombre', 'telefono', 'status', 'role', 'actions'];
+  public data: Colaborador;
   
   constructor(
     private dialog: MatDialog,

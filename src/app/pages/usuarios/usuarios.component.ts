@@ -14,7 +14,7 @@ import { UsuarioService } from '../../shared/services/usuario.service';
 })
 export class UsuariosComponent implements OnInit {
 
-  public displayedColumns: string[] = ['nombre', 'usuario', 'role', 'email', '_id'];
+  public displayedColumns: string[] = ['nombre', 'usuario', 'role', 'email', 'actions'];
   public data: Usuario;
 
   constructor(
