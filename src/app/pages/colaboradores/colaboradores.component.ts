@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ColaboradorService } from '../../shared/services/colaborador.service';
 import { Colaborador } from '../../interface/Interfaces';
@@ -13,7 +13,7 @@ import { ColaboradorModalComponent } from '../../shared/components/modals/colabo
 export class ColaboradoresComponent implements OnInit {
 
   public displayColumns: string[] = ['nombre', 'telefono', 'isActive', 'role', '_id'];
-  public data: Colaborador[];
+  public data: any;
   
   constructor(
     private dialog: MatDialog,
@@ -24,7 +24,7 @@ export class ColaboradoresComponent implements OnInit {
   getAll() {
     return this.colaboradorService.getAll().subscribe(resp => this.data = resp);
   }
-  
+
   ngOnInit(): void {
     this.getAll();
   }

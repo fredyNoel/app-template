@@ -22,9 +22,11 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { MatTableResponsiveModule } from './mat-table-responsive/mat-table-responsive.module'
 
 
 @NgModule({
+  imports: [MatTableResponsiveModule],
   exports: [
     MatAutocompleteModule,
     MatButtonModule,
@@ -48,7 +50,8 @@ import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/d
     MatRadioModule,
     MatDatepickerModule,
     MatTooltipModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableResponsiveModule
   ],
   providers: [
     { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: true, autoFocus: true } },
