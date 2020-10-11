@@ -2,8 +2,8 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Colaborador } from 'src/app/interface/Interfaces';
 
+import { Colaborador } from '../../../../interface/Interfaces';
 import { ColaboradorService } from '../../../../shared/services/colaborador.service';
 
 @Component({
@@ -42,8 +42,10 @@ export class ColaboradorModalComponent implements OnInit {
   }
 
   saveData() {
+    console.log(this.data._id);
+    
     if(!this.forma.valid) {
-      return this.snack.open('Favor de rellenar los compos!', 'Ok', {duration: 3000});
+      return this.snack.open('Favor de rellenar los compos!', 'Ok');
     }
     this.isLoading = true;
     

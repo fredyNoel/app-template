@@ -14,8 +14,8 @@ import { UsuarioService } from '../../shared/services/usuario.service';
 })
 export class UsuariosComponent implements OnInit {
 
-  public displayedColumns: string[] = ['nombre', 'usuario', 'role', 'email', 'actions'];
-  public data: Usuario;
+  public displayedColumns: string[] = ['nombre', 'usuario', 'telefono', 'role', 'email', 'actions'];
+  public data: Usuario[];
 
   constructor(
     private dialog: MatDialog,
@@ -23,11 +23,16 @@ export class UsuariosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.usuarioService.getAll().subscribe((resp) => this.data = resp);
+    this.getAll();
   }
 
-  openDialog(id: string = '') {
-    this.dialog.open(UsuarioModalComponent, {});
+  getAll() {
+    return this.usuarioService.getAll().subscribe((resp: Usuario[]) => this.data = resp);
+  }
+
+  openDialog(data: Usuario = {}) {
+    const dialogRef = this.dialog.open(UsuarioModalComponent, {data});
+    dialogRef.afterClosed().subscribe(() => this.getAll());
   }
 
 }

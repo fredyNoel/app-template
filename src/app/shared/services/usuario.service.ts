@@ -21,11 +21,15 @@ export class UsuarioService {
     private authUser: AuthService
   ) { }
 
-  getAll(): Observable<any> {
+  getAll(): Observable<Usuario[]> {
     const url = this.api + '/usuario?token=' + this.authUser.token;
     return this.http.get(url, {headers: this.headers}).pipe(map((resp: any) => resp.data));
   }
-  update(user: Usuario): Observable<any> {
+  addElement(user: Usuario): Observable<any> {
     return;
+  }
+  updateElement(usuario: Usuario): Observable<Usuario> {
+    const url = this.api + '/usuario/' + usuario._id + '?token=' + this.authUser.token;
+    return this.http.put(url, usuario, {headers: this.headers}).pipe(map((resp: any) => resp.data));
   }
 }
