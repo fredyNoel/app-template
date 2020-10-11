@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
 
   ingresar() {
     if(this.forma.invalid) {
-      return this.snack.open('Favor de llenar los campos', 'Ok', {duration: 3000});
+      return this.snack.open('Favor de llenar los campos', 'Ok');
     }
     this.isLoading = true;
     const user = this.forma.value;

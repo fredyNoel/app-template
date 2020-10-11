@@ -1,8 +1,8 @@
 export interface ApiData {
-  success: boolean,
-  data: Usuario | Colaborador,
-  mensaje: any,
-  errors: any
+  success?: boolean,
+  data?: {},
+  mensaje?: any,
+  errors?: any
 }
 
 export interface Usuario {

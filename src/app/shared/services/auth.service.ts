@@ -15,35 +15,30 @@ export class AuthService {
 
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   private api: string = environment.api;
-  public currentUser: any = {};
+  public currentUser: Usuario = {};
   public token: string;
 
   constructor(
     private http: HttpClient,
     private router: Router,
-    private snackBar: MatSnackBar
+    private snack: MatSnackBar
   ) {
     this.getStorage();
   }
 
   // REGISTRARSE
   signUp(user: Usuario): Observable<any> {
-    const api = `${this.api}/register-user`;
-    return this.http.post(api, user)
-      .pipe(
-        map((resp: Response) => {
-          return resp || {}
-        })
-      );
+    const url = this.api + '/register-user';
+    return this.http.post(url, user).pipe(map((resp: Response) => resp || {} ));
   }
 
   updateProfile(user: Usuario): Observable<any> {
     const url = this.api + '/usuario/perfil/' + this.currentUser._id + '?token=' + this.token;
     return this.http.put(url, user)
     .pipe(
-      map((resp: any) => {
+      map((resp: ApiData) => {
         this.setStorage(resp.data, this.token);
-        this.snackBar.open('Informacion actualizada!', 'Ok', {duration: 3500});
+        this.snack.open('Informacion actualizada!', 'Ok');
         return;
       })
     );

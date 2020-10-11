@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { AuthService } from './auth.service';
-import { Colaborador } from '../../interface/Interfaces';
+import { ApiData, Colaborador } from '../../interface/Interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -19,18 +19,18 @@ export class ColaboradorService {
     private authService: AuthService
   ) { }
   
-  getAll(): Observable<Colaborador[]> {
+  getAll(): Observable<Colaborador> {
     const url = this.api + '/empleado?token=' + this.authService.token;
-    return this.http.get(url, {headers: this.headers}).pipe(map((resp: any) => resp.data));
+    return this.http.get(url, {headers: this.headers}).pipe(map((resp: ApiData) => resp.data));
   }
 
   addElement(colaborador: Colaborador): Observable<Colaborador> {
     const url = this.api + '/empleado?token=' + this.authService.token;
-    return this.http.post(url, colaborador, {headers: this.headers}).pipe(map((resp: any) => resp.data));
+    return this.http.post(url, colaborador, {headers: this.headers}).pipe(map((resp: ApiData) => resp.data));
   }
   
   updateElement(colaborador: Colaborador): Observable<Colaborador> {
     const url = this.api + '/empleado/' + colaborador._id + '?token=' + this.authService.token;
-    return this.http.put(url, colaborador, {headers: this.headers}).pipe(map((resp: any) => resp.data));
+    return this.http.put(url, colaborador, {headers: this.headers}).pipe(map((resp: ApiData) => resp.data));
   }
 }
