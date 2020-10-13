@@ -32,6 +32,17 @@ export interface Colaborador {
   usuario?: Usuario
 }
 
+export interface Ruta {
+  clave?: string,
+  nombre?: string,
+  subrutas?: string,
+  tipo_ruta?: string,
+  isDelete?: boolean,
+  createAt?: Date,
+  _id?: string,
+  usuarip?: Date
+}
+
 export interface ItemMenu {
   label: string,
   icon: string,

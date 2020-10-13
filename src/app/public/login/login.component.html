@@ -19,9 +19,7 @@
     </mat-form-field>
     <mat-checkbox formControlName="recuerdame" class="d-block pb-2">Recordarme!</mat-checkbox>
     <button mat-raised-button class="w-100" color="primary" type="submit" [disabled]="isLoading">
-      <div class="d-flex justify-content-center p-1" *ngIf="isLoading">
-        <mat-progress-spinner mode="indeterminate" diameter="29" strokeWidth="5"></mat-progress-spinner>
-      </div>
+      <mat-spinner *ngIf="isLoading" class="mx-auto my-1"></mat-spinner>
       <span *ngIf="!isLoading">Ingresar</span>
     </button>
   </form>

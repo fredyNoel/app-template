@@ -44,9 +44,9 @@
     </mat-form-field>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
-    <button mat-raised-button mat-dialog-close type="button">Cancelar</button>
-    <button mat-raised-button color="primary" type="sybmit" [disabled]="isLoading">
-      <mat-spinner class="my-1" *ngIf="isLoading"></mat-spinner> 
+    <button mat-raised-button mat-dialog-close type="button" [disabled]="isLoading">Cancelar</button>
+    <button mat-raised-button color="primary" type="sybmit" [disabled]="isLoading" style="min-width: 105px;">
+      <mat-spinner class="mx-auto my-1" *ngIf="isLoading"></mat-spinner> 
       <span *ngIf="!isLoading">{{title}}</span>
     </button>
   </mat-dialog-actions>

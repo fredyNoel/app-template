@@ -58,7 +58,10 @@
     </mat-form-field>    
   </mat-dialog-content>
   <mat-dialog-actions align="end">
-    <button mat-raised-button mat-dialog-close type="button">Cancel</button>
-    <button mat-raised-button color="primary" type="submit">Guardar</button>
+    <button mat-raised-button mat-dialog-close type="button" [disabled]="isLoading">Cancel</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="isLoading" style="min-width: 85px;">
+      <mat-spinner class="mx-auto my-1" *ngIf="isLoading"></mat-spinner>
+      <span *ngIf="!isLoading">Guardar</span>
+    </button>
   </mat-dialog-actions>
 </form>

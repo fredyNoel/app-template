@@ -7,21 +7,20 @@ import { MaterialModule } from '../material/material.module';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { UsuarioModalComponent } from './components/modals/usuario/usuario-modal.component';
 import { ColaboradorModalComponent } from './components/modals/colaborador/colaborador-modal.component';
+import { RutaModalComponent } from './components/modals/ruta/ruta-modal.component';
 
 @NgModule({
   declarations: [
     SidenavComponent,
     UsuarioModalComponent,
-    ColaboradorModalComponent
+    ColaboradorModalComponent,
+    RutaModalComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
     RouterModule,
     ReactiveFormsModule
-  ],
-  entryComponents: [
-    // ColaboradorModalComponent
   ],
   exports: [SidenavComponent]
 })

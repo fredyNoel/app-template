@@ -4,7 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Colaborador } from '../../../../interface/Interfaces';
-import { ColaboradorService } from '../../../../shared/services/colaborador.service';
+import { ColaboradorService } from '../../../services/colaborador.service';
 
 @Component({
   selector: 'app-colaborador-modal',

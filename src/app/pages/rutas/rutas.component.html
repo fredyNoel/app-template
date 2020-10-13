@@ -4,11 +4,46 @@
     <mat-card-subtitle>Registro de rutas</mat-card-subtitle>
   </mat-card-header>
   <div class="d-flex justify-content-end">
-    <button mat-mini-fab>
+    <button mat-mini-fab (click)="openDialog()">
         <mat-icon>add</mat-icon>
     </button>
   </div>
   <mat-card-content>
-    Contenido
+
+    <table mat-table matTableResponsive [dataSource]="data" class="mat-elevation-z8 w-100">
+      
+      <ng-container matColumnDef="clave">
+        <th mat-header-cell *matHeaderCellDef> Clave. </th>
+        <td mat-cell *matCellDef="let element"> {{element.clave}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="tipo_ruta">
+        <th mat-header-cell *matHeaderCellDef> Tipo ruta </th>
+        <td mat-cell *matCellDef="let element"> {{element.tipo_ruta}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button color="accent" (click)="openDialog(element)">
+              <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn">
+              <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <div class="d-flex justify-content-center pt-3" *ngIf="!data"><mat-spinner></mat-spinner></div>
+    
+    
   </mat-card-content>
 </mat-card>

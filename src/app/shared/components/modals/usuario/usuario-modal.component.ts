@@ -4,7 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Usuario } from '../../../../interface/Interfaces';
-import { UsuarioService } from '../../../../shared/services/usuario.service';
+import { UsuarioService } from '../../../services/usuario.service';
 
 @Component({
   selector: 'app-usuario-modal',
