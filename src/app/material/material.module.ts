@@ -70,7 +70,7 @@ import { MatTableResponsiveModule } from './mat-table-responsive/mat-table-respo
     MatTableResponsiveModule
   ],
   providers: [
-    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: true, autoFocus: true } },
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: true, autoFocus: true, disableClose: true } },
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },
     { provide: MAT_PROGRESS_SPINNER_DEFAULT_OPTIONS, useValue: { diameter: 28, strokeWidth: 5} },
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 3200 } }

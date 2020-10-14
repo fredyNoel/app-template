@@ -6,7 +6,14 @@ import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss']
+  styles: [`
+    .example-container {
+      height: calc(100vh - 64px);
+      .mat-sidenav-content {
+        height: calc(100vh - 64px);
+      }
+    }
+  `]
 })
 export class SidenavComponent implements OnInit {
 
