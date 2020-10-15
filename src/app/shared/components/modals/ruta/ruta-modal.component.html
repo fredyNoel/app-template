@@ -1,28 +1,52 @@
 <form class="container" [formGroup]="forma" (ngSubmit)="saveData()" autocomplete="off">
   <h2 mat-dialog-title>Inoformacion de ruta</h2>
   <mat-dialog-content class="mat-typography">
-    <mat-form-field class="w-100">
-      <mat-label>Clave ruta *</mat-label>
-      <input matInput formControlName="clave">
-    </mat-form-field>
-    <mat-form-field class="w-100">
-      <mat-label>Nombre</mat-label>
-      <input matInput formControlName="nombre">
-    </mat-form-field>
-    <mat-form-field class="w-100">
-      <mat-label>Subrutas</mat-label>
-      <input matInput formControlName="subrutas">
-    </mat-form-field>
-    <mat-form-field class="w-100">
-      <mat-label>Elija un tipo de ruta</mat-label>
-      <mat-select matInput formControlName="tipo_ruta">
-        <mat-option value="RUTA">Ruta</mat-option>
-        <mat-option value="AUTOSERVICIO">Venta autoservicio</mat-option>
-        <mat-option value="FALTANTE">Faltante de inventario</mat-option>
-        <mat-option value="RUTA_BORDO">Ruta a bordo</mat-option>
-        <mat-option value="ESPECIAL">Venta especial</mat-option>
-      </mat-select>
-    </mat-form-field>
+    <div [ngClass]="{'row': data.usuario}">
+      <div [ngClass]="{'col-sm-7': data.usuario}">
+        <mat-form-field class="w-100">
+          <mat-label>Clave ruta *</mat-label>
+          <input matInput formControlName="clave">
+        </mat-form-field>
+        <mat-form-field class="w-100">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="nombre">
+        </mat-form-field>
+        <mat-form-field class="w-100">
+          <mat-label>Subrutas</mat-label>
+          <input matInput formControlName="subrutas">
+        </mat-form-field>
+        <mat-form-field class="w-100">
+          <mat-label>Elija un tipo de ruta</mat-label>
+          <mat-select matInput formControlName="tipo_ruta">
+            <mat-option value="RUTA">Ruta</mat-option>
+            <mat-option value="AUTOSERVICIO">Venta autoservicio</mat-option>
+            <mat-option value="FALTANTE">Faltante de inventario</mat-option>
+            <mat-option value="RUTA_BORDO">Ruta a bordo</mat-option>
+            <mat-option value="ESPECIAL">Venta especial</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-5" *ngIf="data.usuario">
+        <mat-card>
+          <mat-card-content>
+            <div class="form-group">
+              <label>Creado por</label>
+              <input class="form-control" readonly value="{{data.usuario.nombre}} {{data.usuario.apellidos}}" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+              <input class="form-control" readonly value="{{data.usuario.usuario}}" placeholder="Usuario">
+            </div>
+            <div class="form-group">
+              <input class="form-control" readonly value="{{data.usuario.telefono}}" placeholder="Telefono">
+            </div>
+            <div class="form-group">
+              <label>Fecha creacion</label>
+              <input class="form-control" readonly value="{{data.createAt | date}}" placeholder="Fecha creacion">
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <button mat-raised-button mat-dialog-close type="button" [disabled]="isLoading">Cancelar</button>

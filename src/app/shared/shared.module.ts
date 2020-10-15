@@ -8,13 +8,15 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { UsuarioModalComponent } from './components/modals/usuario/usuario-modal.component';
 import { ColaboradorModalComponent } from './components/modals/colaborador/colaborador-modal.component';
 import { RutaModalComponent } from './components/modals/ruta/ruta-modal.component';
+import { FlotaModalComponent } from './components/modals/flota/flota-modal.component';
 
 @NgModule({
   declarations: [
     SidenavComponent,
     UsuarioModalComponent,
     ColaboradorModalComponent,
-    RutaModalComponent
+    RutaModalComponent,
+    FlotaModalComponent
   ],
   imports: [
     CommonModule,

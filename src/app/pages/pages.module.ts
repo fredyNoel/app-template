@@ -10,6 +10,7 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ColaboradoresComponent } from './colaboradores/colaboradores.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { RutasComponent } from './rutas/rutas.component';
+import { FlotaComponent } from './flota/flota.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { RutasComponent } from './rutas/rutas.component';
     UsuariosComponent,
     ColaboradoresComponent,
     PerfilComponent,
-    RutasComponent
+    RutasComponent,
+    FlotaComponent
   ],
   imports: [
     CommonModule,

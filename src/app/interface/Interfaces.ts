@@ -5,6 +5,35 @@ export interface ApiData {
   errors?: any
 }
 
+export interface Embarque {
+  folio?: string,
+  chofer?: Colaborador,
+  auxiliar?: Colaborador,
+  supervisor?: Colaborador,
+  ruta?: Ruta,
+  unidad?: Flota,
+  usuario?: Usuario,
+  peso?: number,
+  importe?: number,
+  isDelete?: boolean,
+  fecha_embarque?: Date,
+  fecha_entrega?: Date,
+  createAt?: Date,
+  _id?: string
+}
+
+export interface Flota {
+  clave?: string,
+  placa?: string,
+  anio?: string,
+  capacidad?: number,
+  tipo?: string,
+  usuario?: Usuario,
+  isDelete?: boolean,
+  createAt?: Date,
+  _id?: string
+}
+
 export interface Usuario {
   nombre?: string,
   apellidos?: string,
@@ -40,7 +69,7 @@ export interface Ruta {
   isDelete?: boolean,
   createAt?: Date,
   _id?: string,
-  usuarip?: Date
+  usuario?: Usuario
 }
 
 export interface ItemMenu {

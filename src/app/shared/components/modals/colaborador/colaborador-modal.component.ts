@@ -42,7 +42,6 @@ export class ColaboradorModalComponent implements OnInit {
   }
 
   saveData() {
-    console.log(this.data._id);
     
     if(!this.forma.valid) {
       return this.snack.open('Favor de rellenar los compos!', 'Ok');

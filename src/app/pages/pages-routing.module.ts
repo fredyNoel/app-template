@@ -6,6 +6,7 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ColaboradoresComponent } from './colaboradores/colaboradores.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { RutasComponent } from './rutas/rutas.component';
+import { FlotaComponent } from './flota/flota.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,9 @@ const routes: Routes = [
       { path: 'usuarios', component: UsuariosComponent },
       { path: 'colaboradores', component: ColaboradoresComponent },
       { path: 'rutas', component: RutasComponent },
-      { path: 'perfil', component: PerfilComponent }
+      { path: 'perfil', component: PerfilComponent },
+      { path: 'flota', component: FlotaComponent }
+
     ]
   },
 ];
