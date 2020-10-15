@@ -58,7 +58,8 @@ export interface Colaborador {
   role?: string,
   isActive?: boolean,
   _id?: string,
-  usuario?: Usuario
+  usuario?: Usuario,
+  createAt?: Date
 }
 
 export interface Ruta {

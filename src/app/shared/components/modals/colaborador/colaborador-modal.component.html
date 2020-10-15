@@ -1,47 +1,65 @@
 <form class="container" [formGroup]="forma" (ngSubmit)="saveData()">
   <h2 mat-dialog-title>{{title}}</h2>
   <mat-dialog-content class="mat-typography">
-    <div class="row">
-      <div class="col-sm-6">
-        <mat-form-field class="w-100">
-          <mat-label>Nombre</mat-label>
-          <input matInput formControlName="nombre">
-        </mat-form-field>
-      </div>
-      <div class="col-sm-6">
-        <mat-form-field class="w-100">
-          <mat-label>Apellidos</mat-label>
-          <input matInput formControlName="apellidos">
-        </mat-form-field>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-7">
+    <div [ngClass]="{'row': data.usuario}">
+      <div [ngClass]="{'col-sm-7': data.usuario}">
+        <div class="row">
+          <div class="col-sm-6">
+            <mat-form-field class="w-100">
+              <mat-label>Nombre</mat-label>
+              <input matInput formControlName="nombre">
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field class="w-100">
+              <mat-label>Apellidos</mat-label>
+              <input matInput formControlName="apellidos">
+            </mat-form-field>
+          </div>
+        </div>
         <mat-form-field class="w-100">
           <mat-label>Direccion</mat-label>
           <input matInput formControlName="direccion">
         </mat-form-field>
-      </div>
-      <div class="col-sm-5">
         <mat-form-field class="w-100">
           <mat-label>Telefono</mat-label>
           <input matInput formControlName="telefono">
         </mat-form-field>
+        <mat-form-field class="w-100">
+          <mat-label>Elija un area designada</mat-label>
+          <mat-select matInput formControlName="role">
+            <mat-option value="ADMINISTRATIVO">Administrador</mat-option>
+            <mat-option value="VENDEDOR">Vendedor</mat-option>
+            <mat-option value="RECIBO">Recepcion</mat-option>
+            <mat-option value="CHOFER">Chofer</mat-option>
+            <mat-option value="AUX_ALMACEN">Auxiliar almacen</mat-option>
+            <mat-option value="AUX_RUTA">Auxiliar ruta</mat-option>
+            <mat-option value="CHECADOR">Checador</mat-option>
+            <mat-option value="SUPERVISOR">Supervisor</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-5" *ngIf="data.usuario">
+        <mat-card>
+          <mat-card-content>
+            <div class="form-group">
+              <label>Creado por</label>
+              <input class="form-control" readonly value="{{data.usuario.nombre}} {{data.usuario.apellidos}}" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+              <input class="form-control" readonly value="{{data.usuario.usuario}}" placeholder="Usuario">
+            </div>
+            <div class="form-group">
+              <input class="form-control" readonly value="{{data.usuario.telefono}}" placeholder="Telefono">
+            </div>
+            <div class="form-group">
+              <label>Fecha creacion</label>
+              <input class="form-control" readonly value="{{data.createAt | date}}" placeholder="Fecha creacion">
+            </div>
+          </mat-card-content>
+        </mat-card>
       </div>
     </div>
-    <mat-form-field class="w-100">
-      <mat-label>Elija un area designada</mat-label>
-      <mat-select matInput formControlName="role">
-        <mat-option value="ADMINISTRATIVO">Administrador</mat-option>
-        <mat-option value="VENDEDOR">Vendedor</mat-option>
-        <mat-option value="RECIBO">Recepcion</mat-option>
-        <mat-option value="CHOFER">Chofer</mat-option>
-        <mat-option value="AUX_ALMACEN">Auxiliar almacen</mat-option>
-        <mat-option value="AUX_RUTA">Auxiliar ruta</mat-option>
-        <mat-option value="CHECADOR">Checador</mat-option>
-        <mat-option value="SUPERVISOR">Supervisor</mat-option>
-      </mat-select>
-    </mat-form-field>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <button mat-raised-button mat-dialog-close type="button" [disabled]="isLoading">Cancelar</button>
