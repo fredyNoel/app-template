@@ -36,7 +36,6 @@ export class ColaboradorModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.data);
     if(this.data._id) {
       this.title = 'Actualizar';
     }
