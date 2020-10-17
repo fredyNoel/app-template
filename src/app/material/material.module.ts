@@ -27,11 +27,12 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
-import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { MatTableResponsiveModule } from './mat-table-responsive/mat-table-responsive.module'
-
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
 
 @NgModule({
   imports: [MatTableResponsiveModule],
@@ -65,15 +66,19 @@ import { MatTableResponsiveModule } from './mat-table-responsive/mat-table-respo
     MatGridListModule,
     MatRadioModule,
     MatDatepickerModule,
+    MatMomentDateModule,
+    MatNativeDateModule,
     MatTooltipModule,
     MatDialogModule,
     MatTableResponsiveModule
   ],
   providers: [
-    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: true, disableClose: true, maxWidth: '800px' } },
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: true, disableClose: true } },
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },
     { provide: MAT_PROGRESS_SPINNER_DEFAULT_OPTIONS, useValue: { diameter: 28, strokeWidth: 5} },
-    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 3200 } }
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 3200 } },
+    { provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: { useUtc: true } }
+    
   ]
 })
 export class MaterialModule { }

@@ -14,7 +14,7 @@ import { FlotaModalComponent } from '../../shared/components/modals/flota/flota-
 export class FlotaComponent implements OnInit {
 
   public displayColumns: string[] = ['clave', 'placa', 'capacidad', 'tipo', 'actions'];
-  data: Flota;
+  data: Flota[];
   
   constructor(
     private flotaService: FlotaService,
@@ -26,7 +26,7 @@ export class FlotaComponent implements OnInit {
   }
 
   getAll() {
-    return this.flotaService.getAll().subscribe((resp: Flota) => this.data = resp);
+    return this.flotaService.getAll().subscribe((resp: Flota[]) => this.data = resp);
   }
 
   openDialog(data: Flota = {}) {

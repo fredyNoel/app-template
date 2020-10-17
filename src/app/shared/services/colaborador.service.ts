@@ -19,7 +19,7 @@ export class ColaboradorService {
     private authService: AuthService
   ) { }
   
-  getAll(): Observable<Colaborador> {
+  getAll(): Observable<Colaborador[]> {
     const url = this.api + '/empleado?token=' + this.authService.token;
     return this.http.get(url, {headers: this.headers}).pipe(map((resp: ApiData) => resp.data));
   }

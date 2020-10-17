@@ -1,6 +1,6 @@
 export interface ApiData {
   success?: boolean,
-  data?: {},
+  data?: any,
   mensaje?: any,
   errors?: any
 }

@@ -15,7 +15,7 @@ import { UsuarioService } from '../../shared/services/usuario.service';
 export class UsuariosComponent implements OnInit {
 
   public displayedColumns: string[] = ['nombre', 'usuario', 'telefono', 'role', 'email', 'actions'];
-  public data: Usuario;
+  public data: Usuario[];
 
   constructor(
     private dialog: MatDialog,
@@ -27,7 +27,7 @@ export class UsuariosComponent implements OnInit {
   }
 
   getAll() {
-    return this.usuarioService.getAll().subscribe((resp: Usuario) => this.data = resp);
+    return this.usuarioService.getAll().subscribe((resp: Usuario[]) => this.data = resp);
   }
 
   openDialog(data: Usuario = {}) {

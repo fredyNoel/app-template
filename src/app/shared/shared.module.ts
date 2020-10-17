@@ -10,13 +10,16 @@ import { ColaboradorModalComponent } from './components/modals/colaborador/colab
 import { RutaModalComponent } from './components/modals/ruta/ruta-modal.component';
 import { FlotaModalComponent } from './components/modals/flota/flota-modal.component';
 
+import { EmbarqueModalComponent } from './components/modals/bitacora/embarque/embarque-modal.component';
+
 @NgModule({
   declarations: [
     SidenavComponent,
     UsuarioModalComponent,
     ColaboradorModalComponent,
     RutaModalComponent,
-    FlotaModalComponent
+    FlotaModalComponent,
+    EmbarqueModalComponent
   ],
   imports: [
     CommonModule,

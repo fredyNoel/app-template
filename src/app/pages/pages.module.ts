@@ -12,6 +12,8 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { RutasComponent } from './rutas/rutas.component';
 import { FlotaComponent } from './flota/flota.component';
 
+import { EmbarqueComponent } from './bitacora/embarque/embarque.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { FlotaComponent } from './flota/flota.component';
     ColaboradoresComponent,
     PerfilComponent,
     RutasComponent,
-    FlotaComponent
+    FlotaComponent,
+    EmbarqueComponent
   ],
   imports: [
     CommonModule,

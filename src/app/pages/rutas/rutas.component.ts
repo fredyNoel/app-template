@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { MatDialog } from '@angular/material/dialog';
 
 import { RutaService } from '../../shared/services/ruta.service';
@@ -14,8 +13,8 @@ import { RutaModalComponent } from '../../shared/components/modals/ruta/ruta-mod
 })
 export class RutasComponent implements OnInit {
 
-  public displayedColumns: string[] = ['clave', 'nombre', 'tipo_ruta', 'actions'];
-  data: Ruta;
+  public displayColumns: string[] = ['clave', 'nombre', 'tipo_ruta', 'actions'];
+  data: Ruta[];
 
   constructor(
     private rutaService: RutaService,
@@ -27,7 +26,7 @@ export class RutasComponent implements OnInit {
   }
 
   getAll() {
-    return this.rutaService.getAll().subscribe((resp: Ruta) => this.data = resp);
+    return this.rutaService.getAll().subscribe((resp: Ruta[]) => this.data = resp);
   }
 
   openDialog(data: Ruta = {}) {

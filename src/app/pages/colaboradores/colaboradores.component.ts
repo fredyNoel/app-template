@@ -13,7 +13,7 @@ import { ColaboradorModalComponent } from '../../shared/components/modals/colabo
 export class ColaboradoresComponent implements OnInit {
 
   public displayColumns: string[] = ['nombre', 'telefono', 'status', 'role', 'actions'];
-  public data: Colaborador;
+  public data: Colaborador[];
   
   constructor(
     private dialog: MatDialog,
@@ -26,7 +26,7 @@ export class ColaboradoresComponent implements OnInit {
   }
 
   getAll() {
-    return this.colaboradorService.getAll().subscribe((resp: Colaborador) => this.data = resp);
+    return this.colaboradorService.getAll().subscribe((resp: Colaborador[]) => this.data = resp);
   }
   
   openDialog(data: Colaborador = {}) {

@@ -21,7 +21,7 @@ export class UsuarioService {
     private authUser: AuthService
   ) { }
 
-  getAll(): Observable<Usuario> {
+  getAll(): Observable<Usuario[]> {
     const url = this.api + '/usuario?token=' + this.authUser.token;
     return this.http.get(url, {headers: this.headers}).pipe(map((resp: ApiData) => resp.data));
   }

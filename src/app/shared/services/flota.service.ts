@@ -24,7 +24,7 @@ export class FlotaService {
     return this.http.post(url, flota).pipe(map((resp: ApiData) => resp.data));
   }
 
-  getAll(): Observable<Flota> {
+  getAll(): Observable<Flota[]> {
     const url = this.api + '/flota?token=' + this.authService.token;
     return this.http.get(url).pipe(map((resp: ApiData) => resp.data));
   }

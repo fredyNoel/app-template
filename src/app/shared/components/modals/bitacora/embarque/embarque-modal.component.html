@@ -1,0 +1,106 @@
+<form class="container" [formGroup]="forma" (ngSubmit)="saveData()" autocomplete="off">
+  <h2 mat-dialog-title>Informacion de ruta</h2>
+  <mat-dialog-content class="mat-typography">
+
+        <mat-form-field class="w-100">
+          <mat-label>Folio *</mat-label>
+          <input matInput formControlName="folio">
+        </mat-form-field>
+
+        <div class="row">
+          <div class="col-sm-4">
+            <mat-form-field class="w-100">
+              <mat-label>Chofer*</mat-label>
+              <mat-select matInput formControlName="chofer">
+                <mat-option *ngFor="let chofer of colaboradores" [value]="chofer._id" [hidden]="chofer.role !== 'CHOFER'">
+                  {{chofer.nombre}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-4">
+            <mat-form-field class="w-100">
+              <mat-label>Auxiliar*</mat-label>
+              <mat-select matInput formControlName="auxiliar">
+                <mat-option *ngFor="let auxiliar of colaboradores" [value]="auxiliar._id" [hidden]="auxiliar.role !== 'AUX_RUTA'">
+                  {{auxiliar.nombre}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-4">
+            <mat-form-field class="w-100">
+              <mat-label>Supervisor/Checador*</mat-label>
+              <mat-select matInput formControlName="supervisor">
+                <mat-option *ngFor="let supervisor of colaboradores" [value]="supervisor._id" [hidden]="supervisor.role !== 'CHECADOR'">
+                  {{supervisor.nombre}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <mat-form-field class="w-100">
+              <mat-label>Ruta*</mat-label>
+              <mat-select matInput formControlName="ruta">
+                <mat-option *ngFor="let ruta of rutas" [value]="ruta._id">
+                  {{ruta.nombre}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field class="w-100">
+              <mat-label>Unidad designada*</mat-label>
+              <mat-select matInput formControlName="unidad">
+                <mat-option *ngFor="let flota of flotas" [value]="flota._id">
+                  {{flota.clave}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <mat-form-field class="w-100">
+              <mat-label>Peso</mat-label>
+              <input matInput formControlName="peso">
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field class="w-100">
+              <mat-label>Importe</mat-label>
+              <input matInput formControlName="importe">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <mat-form-field color="accent" class="w-100">
+              <mat-label>Fecha embarque</mat-label>
+              <input matInput [matDatepicker]="picker1" formControlName="fecha_embarque" [value]="data.fecha_embarque">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field color="accent" class="w-100">
+              <mat-label>Fecha entrega</mat-label>
+              <input matInput [matDatepicker]="picker2" formControlName="fecha_entrega">
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close type="button" [disabled]="isLoading">Cancelar</button>
+    <button mat-raised-button color="primary" type="sybmit" [disabled]="isLoading" style="min-width: 105px;">
+      <mat-spinner class="mx-auto my-1" *ngIf="isLoading"></mat-spinner> 
+      <span *ngIf="!isLoading">Guardar</span>
+    </button>
+  </mat-dialog-actions>
+</form>
+

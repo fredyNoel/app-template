@@ -30,7 +30,10 @@ export class SidenavComponent implements OnInit {
     },
     {
       label: 'Bitacora',
-      icon: 'assignment_turned_in'
+      icon: 'assignment_turned_in',
+      submenu: [
+        { label: 'Embarque', url: 'embarque', icon: 'link' }
+      ]
     }
 
   ];

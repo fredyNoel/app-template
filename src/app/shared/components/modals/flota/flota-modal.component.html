@@ -4,19 +4,25 @@
     <div [ngClass]="{'row': data.usuario}">
       <div [ngClass]="{'col-sm-7': data.usuario}">
         <mat-form-field class="w-100">
-          <mat-label>Clave ruta *</mat-label>
+          <mat-label>Numero interno *</mat-label>
           <input matInput formControlName="clave">
         </mat-form-field>
+        <div class="row">
+          <div class="col-sm-6">
+            <mat-form-field class="w-100">
+              <mat-label>Placa</mat-label>
+              <input matInput formControlName="placa">
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field class="w-100">
+              <mat-label>Año</mat-label>
+              <input matInput formControlName="anio">
+            </mat-form-field>
+          </div>
+        </div>
         <mat-form-field class="w-100">
-          <mat-label>Placa</mat-label>
-          <input matInput formControlName="placa">
-        </mat-form-field>
-        <mat-form-field class="w-100">
-          <mat-label>Año</mat-label>
-          <input matInput formControlName="anio">
-        </mat-form-field>
-        <mat-form-field class="w-100">
-          <mat-label>Capacidad</mat-label>
+          <mat-label>Capacidad de carga</mat-label>
           <input matInput formControlName="capacidad">
         </mat-form-field>
         <mat-form-field class="w-100">

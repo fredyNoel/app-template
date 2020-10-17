@@ -7,6 +7,7 @@ import { ColaboradoresComponent } from './colaboradores/colaboradores.component'
 import { PerfilComponent } from './perfil/perfil.component';
 import { RutasComponent } from './rutas/rutas.component';
 import { FlotaComponent } from './flota/flota.component';
+import { EmbarqueComponent } from './bitacora/embarque/embarque.component';
 
 const routes: Routes = [
   {
@@ -18,8 +19,9 @@ const routes: Routes = [
       { path: 'colaboradores', component: ColaboradoresComponent },
       { path: 'rutas', component: RutasComponent },
       { path: 'perfil', component: PerfilComponent },
-      { path: 'flota', component: FlotaComponent }
+      { path: 'flota', component: FlotaComponent },
 
+      { path: 'embarque', component: EmbarqueComponent }
     ]
   },
 ];

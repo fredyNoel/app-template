@@ -24,7 +24,7 @@ export class RutaService {
     return this.http.post(url, ruta).pipe(map((resp: ApiData) => resp.data));
   }
 
-  getAll(): Observable<Ruta> {
+  getAll(): Observable<Ruta[]> {
     const url = this.api + '/ruta?token=' + this.authService.token;
     return this.http.get(url).pipe(map((resp: ApiData) => resp.data));
   }
@@ -33,6 +33,4 @@ export class RutaService {
     const url = this.api + '/ruta/' + ruta._id + '?token=' + this.authService.token;
     return this.http.put(url, ruta).pipe(map((resp: ApiData) => resp.data));
   }
-
-
 }
