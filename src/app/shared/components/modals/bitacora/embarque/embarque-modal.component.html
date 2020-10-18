@@ -13,7 +13,7 @@
               <mat-label>Chofer*</mat-label>
               <mat-select matInput formControlName="chofer">
                 <mat-option *ngFor="let chofer of colaboradores" [value]="chofer._id" [hidden]="chofer.role !== 'CHOFER'">
-                  {{chofer.nombre}}
+                  {{chofer.nombre}} {{chofer.apellidos}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -23,7 +23,7 @@
               <mat-label>Auxiliar*</mat-label>
               <mat-select matInput formControlName="auxiliar">
                 <mat-option *ngFor="let auxiliar of colaboradores" [value]="auxiliar._id" [hidden]="auxiliar.role !== 'AUX_RUTA'">
-                  {{auxiliar.nombre}}
+                  {{auxiliar.nombre}} {{auxiliar.apellidos}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -33,7 +33,7 @@
               <mat-label>Supervisor/Checador*</mat-label>
               <mat-select matInput formControlName="supervisor">
                 <mat-option *ngFor="let supervisor of colaboradores" [value]="supervisor._id" [hidden]="supervisor.role !== 'CHECADOR'">
-                  {{supervisor.nombre}}
+                  {{supervisor.nombre}} {{supervisor.apellidos}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -80,7 +80,7 @@
           <div class="col-sm-6">
             <mat-form-field color="accent" class="w-100">
               <mat-label>Fecha embarque</mat-label>
-              <input matInput [matDatepicker]="picker1" formControlName="fecha_embarque" [value]="data.fecha_embarque">
+              <input matInput [matDatepicker]="picker1" formControlName="fecha_embarque">
               <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
               <mat-datepicker #picker1></mat-datepicker>
             </mat-form-field>
