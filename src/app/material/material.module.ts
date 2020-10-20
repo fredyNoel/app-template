@@ -78,7 +78,6 @@ import { MatMomentDateModule, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/m
     { provide: MAT_PROGRESS_SPINNER_DEFAULT_OPTIONS, useValue: { diameter: 28, strokeWidth: 5} },
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 3200 } },
     { provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: { useUtc: true } }
-    
   ]
 })
 export class MaterialModule { }

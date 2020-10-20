@@ -56,3 +56,7 @@ $light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
 .is-light {
   @include angular-material-theme($light-theme);
 }
+
+.mat-column-actions {
+  text-align: right
+}

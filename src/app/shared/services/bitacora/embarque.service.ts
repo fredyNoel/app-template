@@ -28,4 +28,8 @@ export class EmbarqueService {
     const url = this.api + '/embarque/' + embarque._id + '?token=' + this.authService.token;
     return this.http.put(url, embarque).pipe(map((resp: ApiData) => resp.data));
   }
+  deleteElement(embarque: Embarque): Observable<Embarque> {
+    const url = this.api + '/embarque/' + embarque._id + '?token=' + this.authService.token;
+    return this.http.delete(url).pipe(map((resp: ApiData) => resp.data));
+  }
 }

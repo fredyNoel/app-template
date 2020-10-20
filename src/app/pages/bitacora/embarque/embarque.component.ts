@@ -9,10 +9,21 @@ import { EmbarqueService } from 'src/app/shared/services/bitacora/embarque.servi
   selector: 'app-embarque',
   templateUrl: './embarque.component.html',
   styles: [
+    
   ]
 })
 export class EmbarqueComponent implements OnInit {
-  public displayColumns: string[] = ['folio', 'chofer', 'auxiliar', 'supervisor', 'ruta', 'unidad', 'peso', 'importe', 'actions'];
+  public displayColumns: string[] = [
+    'folio',
+    'chofer',
+    'auxiliar',
+    'supervisor',
+    'ruta',
+    'unidad',
+    'peso',
+    'importe',
+    'actions'
+  ];
   public data: Embarque[];
   private temp: Embarque = {usuario: {},chofer: {},auxiliar: {},ruta: {},unidad: {},supervisor: {}};
   constructor(
