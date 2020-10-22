@@ -44,4 +44,8 @@ export class EmbarqueComponent implements OnInit {
     dialogRef.beforeClosed().subscribe(() => this.getAll());
   }
 
+  delete(embarque: Embarque) {
+    this.embarqueService.deleteElement(embarque).subscribe(() => this.getAll());
+  }
+
 }

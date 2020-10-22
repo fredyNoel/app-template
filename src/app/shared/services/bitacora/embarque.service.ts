@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, ɵConsole } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -22,7 +22,18 @@ export class EmbarqueService {
   }
   getAll(): Observable<Embarque[]> {
     const url = this.api + '/embarque?token=' + this.authService.token;
-    return this.http.get(url).pipe(map((resp: ApiData) => resp.data));
+    return this.http.get(url)
+    .pipe(
+      map((resp: ApiData) => {
+        let data = resp.data;
+        resp.data.forEach((element: Embarque, index: number, object: []) => {
+          if(element.isDelete && this.authService.currentUser.role !== 'ROOT_ROLE'){
+            object.splice(index, 1);
+          }
+        });
+        return data;
+      })
+    );
   }
   updateElement(embarque: Embarque): Observable<Embarque> {
     const url = this.api + '/embarque/' + embarque._id + '?token=' + this.authService.token;
@@ -30,6 +41,11 @@ export class EmbarqueService {
   }
   deleteElement(embarque: Embarque): Observable<Embarque> {
     const url = this.api + '/embarque/' + embarque._id + '?token=' + this.authService.token;
-    return this.http.delete(url).pipe(map((resp: ApiData) => resp.data));
+    if(this.authService.currentUser.role === 'ROOT_ROLE') {
+      return this.http.delete(url).pipe(map((resp: ApiData) => resp.data));
+    }
+    const url2 = this.api + '/embarque/delete/' + embarque._id + '?token=' + this.authService.token;
+    return this.http.put(url2, embarque).pipe(map((resp: ApiData) => resp.data));
+
   }
 }
