@@ -44,7 +44,7 @@
 
       <ng-container matColumnDef="peso">
         <th mat-header-cell *matHeaderCellDef> Peso </th>
-        <td mat-cell *matCellDef="let element"> {{element.peso}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.peso}}{{element.isDelete}} </td>
       </ng-container>
 
       <ng-container matColumnDef="importe">
