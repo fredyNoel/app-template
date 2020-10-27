@@ -25,15 +25,13 @@ export class EmbarqueService {
     return this.http.get(url)
     .pipe(
       map((resp: ApiData) => {
-        console.log(resp.data);
-        var data: Embarque[] = resp.data;
-        resp.data.forEach((element: Embarque, index: number, object:[]) => {
-          if(element.isDelete){
-            console.log(element.folio, 'Este se elimina!');
-            // object.splice(index, 1);
+        var data: Embarque[] = [];
+        resp.data.forEach((element: Embarque) => {
+          if(!element.isDelete){ 
+            data.push(element);
           }
         });
-        return data;
+        return this.authService.currentUser.role === 'ROOT_ROLE' ? resp.data : data;
       })
     );
   }
